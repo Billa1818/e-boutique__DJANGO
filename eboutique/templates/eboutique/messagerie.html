@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messagerie</title>
+    <link rel="stylesheet" href="{% static 'eboutique/css/mess.css' %}">
+</head>
+
+{% include "./header.html" %}
+ 
+<body>
+    
+<br><br><br>
+
+    <div class="messenger">
+        <div class="contact-list">
+            <h2>Contacts</h2>
+            <ul>
+                <li class="contact" data-id="1">
+                    <img src="{% static 'eboutique/img/1.jpg' %}" alt="Alice" class="contact-img">
+                    <span>Alice</span>
+                </li>
+                <li class="contact" data-id="2">
+                    <img src="{% static 'eboutique/img/1.jpg' %}" alt="Bob" class="contact-img">
+                    <span>Bob</span>
+                </li>
+                <li class="contact" data-id="3">
+                    <img src="{% static 'eboutique/img/1.jpg' %}" alt="Charlie" class="contact-img">
+                    <span>Charlie</span>
+                </li>
+            </ul>
+        </div>
+        <div class="chat-window">
+            <div id="chat-header">
+                <h2>Discussion de :</h2>
+            </div>
+            <div id="chat-messages">
+                <div class="message message-received">
+                    <span>Alice:</span> Salut !
+                </div>
+            </div>
+            <div id="chat-input">
+                <input type="text" id="message-input" placeholder="Écrire un message...">
+                <button id="send-button">Envoyer</button>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contacts = document.querySelectorAll('.contact');
+            const chatMessages = document.getElementById('chat-messages');
+            const chatHeader = document.getElementById('chat-header');
+            const messageInput = document.getElementById('message-input');
+            const sendButton = document.getElementById('send-button');
+
+            // Fake conversations for demo purposes
+            const conversations = {
+                1: [{ sender: 'Alice', text: 'Salut !' }],
+                2: [{ sender: 'Bob', text: 'Bonjour, comment ça va ?' }],
+                3: [{ sender: 'Charlie', text: 'Hey, ça fait longtemps !' }]
+            };
+
+            contacts.forEach(contact => {
+                contact.addEventListener('click', function() {
+                    contacts.forEach(c => c.classList.remove('active'));
+                    contact.classList.add('active');
+                    const contactId = contact.dataset.id;
+                    updateChatWindow(contact.querySelector('span').textContent, conversations[contactId] || []);
+                });
+            });
+
+            sendButton.addEventListener('click', function() {
+                const activeContact = document.querySelector('.contact.active');
+                if (activeContact && messageInput.value.trim()) {
+                    const contactId = activeContact.dataset.id;
+                    const messageText = messageInput.value.trim();
+                    const message = { sender: 'Vous', text: messageText };
+                    conversations[contactId] = conversations[contactId] || [];
+                    conversations[contactId].push(message);
+                    updateChatWindow(activeContact.querySelector('span').textContent, conversations[contactId]);
+                    messageInput.value = '';
+                }
+            });
+
+            function updateChatWindow(contactName, messages) {
+                chatHeader.querySelector('h2').textContent = `Discussion avec ${contactName}`;
+                chatMessages.innerHTML = messages.map(m => {
+                    const messageClass = m.sender === 'Vous' ? 'message-sent' : 'message-received';
+                    return `<div class="message ${messageClass}"><span>${m.sender}:</span> ${m.text}</div>`;
+                }).join('');
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        });
+    </script></html><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+ 
+

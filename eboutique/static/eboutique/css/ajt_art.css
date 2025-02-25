@@ -1,0 +1,12 @@
+ #rrr{
+    box-shadow:0 0 7px rgba(18, 18, 18, 0.5)  ;
+    position: relative;
+    height: 5%;
+    bottom: 100px;
+    border-radius: 20px !important;
+ }
+
+
+ #rrr:hover{
+    box-shadow:0 0 7px rgba(18, 18, 18, 0.8)  ;
+ }

@@ -1,0 +1,27 @@
+Prérequis  installé python et sont Framework Django
+ 
+https://youtu.be/epgN0ci8NZs?si=yuXraZNfLwUtQLPe
+
+ 
+
+
+# Démarrer le serveur de développement
+fait un clique doit et cliquer sur ouvrir de terminal
+python manage.py runserver
+
+
+ 
+
+ 
+
+# Créer un super utilisateur
+python manage.py createsuperuser
+
+ 
+
+Super utilisateur par de:
+
+
+username: @EboutiqueSuperAdim@
+
+pass:1234

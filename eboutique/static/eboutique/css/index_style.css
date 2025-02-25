@@ -1,0 +1,28 @@
+#filtre{
+	background-color: #203543;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border-radius: 8px;
+}
+#rowa{ color: black;
+ 
+box-shadow:0 0 7px rgba(18, 18, 18, 0.5)  ;
+
+transition: box-shadow 0.5s aase-out;
+
+}
+#rowa:hover{
+ 
+box-shadow:   0 0 13px  rgba(18, 18, 18, 0.8);
+
+}
+#imgArt{
+  border-radius: 3px;
+	width: 100%;
+}
+.jour{
+	padding-bottom: 20px;
+}
+.aaa:hover{
+	text-decoration: none;
+}

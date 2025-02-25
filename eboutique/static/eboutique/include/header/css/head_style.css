@@ -1,0 +1,12 @@
+#menuH:hover,#navbarDropdown:hover{
+
+ border: solid  #778899 1px;
+ transition: 0.5s;
+ border-radius: 8px;
+}
+
+ul li a{
+
+    position: sticky !important;
+    top: 0 !important;
+}

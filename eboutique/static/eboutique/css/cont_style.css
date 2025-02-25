@@ -1,0 +1,52 @@
+#carte{
+	width: 50%;
+	position: relative;
+    
+box-shadow:0 0 7px rgba(18, 18, 18, 0.5)  ;
+
+
+}
+
+#carte:hover{
+	box-shadow:   0 0 13px  rgba(18, 18, 18, 0.8);
+}
+.btn{
+
+	position: relative;
+	float: right;
+}
+.cot{
+
+	font-weight: bolder;
+	font-size: 30px;
+	text-align: center;
+}
+.lab{
+	font-weight: bolder;
+}
+
+@media(max-width:768px){
+#carte{
+	width: 100%;
+	position: relative;
+    
+box-shadow:0 0 7px rgba(18, 18, 18, 0.5)  ;
+
+
+}
+
+
+}
+
+@media(min-width:950px){
+#carte{
+	width: 40%;
+	position: relative;
+    
+box-shadow:0 0 7px rgba(18, 18, 18, 0.5)  ;
+
+
+}
+
+
+}

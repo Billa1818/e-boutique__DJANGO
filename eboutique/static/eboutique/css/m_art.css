@@ -1,0 +1,73 @@
+#aza{
+	position: relative;
+	bottom: -18px;
+	
+
+	margin: -10px;
+	margin-right: -20px;
+}
+
+.imagem{
+	border-radius: 8px;
+}
+.desc{
+	position: relative;
+	top: 10px;
+}
+#prix{
+
+	position: relative;
+	left: 35px;
+}
+#carte{
+	box-shadow:0 0 7px rgba(18, 18, 18, 0.5)  ;
+	margin: 20px;
+}
+
+@media(max-width:992px){
+	.imagem{
+		height: 100%;
+		width: 100%;
+		margin-bottom: ;
+
+	}
+	#carte{
+		position: relative;
+		
+	}
+.desc{
+
+	bottom: 800px;
+}
+#aq{
+
+	position: relative;
+	height: 200px;
+}
+
+}
+
+#navi{
+   border-radius: 15px 15px 0 0 ;
+	color: white;
+	font-weight: bold;
+	background-color: #203543 ;
+	padding-top: 10px;
+}
+#navi a {
+	color: white;
+}
+#a :hover{
+	text-decoration: none;
+}
+.aaaa{
+	text-decoration: none;
+	color: black;
+}
+
+.aaaa:hover{
+ 
+	text-decoration: none;
+	color: black;
+}
+

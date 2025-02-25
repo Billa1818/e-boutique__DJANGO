@@ -1,0 +1,31 @@
+.tt{
+	width: 190px;
+	height: 190px;
+	padding: 10px;
+	border-radius: 17px;
+	position: relative;
+	left: 4%;
+}
+
+
+
+.tta{
+	height: 190px;
+	width: 190px;
+	padding: 10px;
+	border-radius: 30px;
+}
+.infoo{
+
+	padding: 20px;
+}
+.blo{
+	box-shadow:0 0 7px rgba(18, 18, 18, 0.5)  ;
+	padding: 30px;
+	padding-left: 60px;
+	margin: 20px;
+}
+#ffg{
+	box-shadow:0 0 7px rgba(18, 18, 18, 0.5)  ;
+	padding: -30px;
+}

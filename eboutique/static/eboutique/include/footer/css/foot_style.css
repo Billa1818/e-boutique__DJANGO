@@ -1,0 +1,19 @@
+nav{
+	background-color:  #203543;
+	margin-bottom: 50px;
+}
+
+.imga{
+	height: 40px;
+	width: 40px;
+	border-radius: 60px;
+	margin-top: 10px;
+}
+.lis{
+	color: white;
+	font-weight: bold;
+	position: relative;
+	 display: inline-block;
+	 float: left;
+
+}

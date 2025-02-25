@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		
+	</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'eboutique/css/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'eboutique/css/m_art.css' %}">
+</head>
+
+{% include "./header.html" %}
+<body><br><br><br><br><br>
+<div> <h3 class="container">Mes article:</h3>
+	{% for articles in article %}
+	 <a href="" class="aaaa"><div class="container">
+	
+		
+ 	<div class="card p-3" id="carte">
+
+			<div class="row" >
+				 <div class="col-lg-4 col-lx-4"id="aq" >
+				 	<img src=" {{ articles.article_img.url }} " alt=" article.article_title " height="180" width="180" class="imagem">
+				 </div>
+				 <div class="col-lg-8 col-xl-8" >
+				 	 <p class="desc"> <b> {{ articles.article_title }}: </b>  {{ articles.article_content }} </p>
+				 </div>
+				 <div class="col" >
+				 	<div class="row " id="aza">
+ 		  
+				 		 <div class="col-xl-4 col-lg-4 col-md-6
+				 		 col-sm-8 col-xs-12  " id="prix" >
+				 		 	<p  > <b>Prix:</b> <b class="text-danger" > {{ articles.article_price }}$$</b> </p>
+				 		 </div>
+				 		 <div style="col-xl-4 col-lg-4 col-md-6
+				 		 col-sm-8 col-xs-12 " >
+							<p >  <em> <b>Cree le:</b>  {{ articles.article_created|date:"d / m "  }} et <b>modifier le:</b> {{ articles.article_updated|date:"d / m "  }} </em> </p><br>
+						</div>
+				 		 <div class="col-xl-4 col-lg-4 col-md-6
+				 		 col-sm-8 col-xs-12" >
+				 		 	<p > <b>type:</b>  {{ articles.article_type }}  <em></em> </p>
+				 		 </div>
+				 		 
+			</div><br>
+
+			
+				 </div>
+			</div>	<a href="{% url 'modifier_article' articles.article_id %}" class="btn btn-success  m-1 "> Modifier</a>
+			<a href="{% url 'sup_art' articles.article_id %}" class="btn btn-danger m-1" > Supprimer</a>	
+			{% if articles.user_delete == False %}	
+			<a href="{% url 'statut_art' articles.article_id %} " class="btn btn-danger m-1" > <b>Statut</b> : moi uniquement </a>
+			{% else %}
+			<a href="{% url 'statut_art' articles.article_id %} " class="btn btn-success m-1" > <b>Statut</b> : tout le monde</a>
+			{% endif %}
+		</div>
+	</div></a>
+	{% empty %}
+
+		<p>Aucun article pulier par vous</p>
+	{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+</div>
+
+<div class="fixed-bottom"  id="navi">
+	<div class="container text-center">
+		<nav>
+			<div class="row">
+				<div class="col-3">
+					
+					<a href="" class=" " >  vendu : <b>0</b> </a>
+
+				</div>
+				<div class="col-3">
+					
+					<a href="" id="a">   <b class="text-success">mes article:</b>{{nbr}} </a>
+
+				</div>
+				<div class="col-3">
+					
+					<a href="" id="a"> <b class="text-success"></b> </a>
+
+				</div>
+				<div class="col-3">
+					
+					<a href="" class="btn btn-warning mb-2"> Tableau de bord</a>
+
+				</div>
+			</div>
+			
+		</nav>
+	</div>
+</div>
+
+ <br><br><br><br>
+</body>
+</html>
